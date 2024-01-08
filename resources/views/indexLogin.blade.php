@@ -1,8 +1,7 @@
 <h2> um teste </h2>
 <br>
 <form action="POST">
-@csrf
-{{-- @method --}}
+    @csrf
     <label for="email">Email:</label>
     <input type="text" name="email" id="email">
     <br>
@@ -11,5 +10,5 @@
     <br>
     <button type="submit">Entrar</button>
 </form>
-    <a href="{{ route('user') }}">Registrar</a>
+<a href="{{ url ('/user') }}">Registrar</a>
 <br>

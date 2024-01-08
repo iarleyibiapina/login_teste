@@ -13,6 +13,7 @@ class OutroController extends Controller
     public function index()
     {
         //
+        echo "index";
     }
 
     /**

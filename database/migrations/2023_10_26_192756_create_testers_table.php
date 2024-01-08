@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('testers', function (Blueprint $table) {
             $table->id();
+            $table->string('nome-criado')->comment("Coluna utilizada para testes");
             $table->timestamps();
         });
     }

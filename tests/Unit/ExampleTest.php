@@ -8,8 +8,13 @@ class ExampleTest extends TestCase
 {
     /**
      * A basic test example.
+     * Testa pequenas partes do codigo
+     * 
+     * variaveis de testes estão contidas em phpunit.xml e deve limpar cache antes dos testes com config:clear
+     * 
+     * @test
      */
-    public function test_that_true_is_true(): void
+    public function passou_aqui(): void
     {
         $this->assertTrue(true);
     }

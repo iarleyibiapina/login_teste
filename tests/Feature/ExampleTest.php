@@ -8,12 +8,30 @@ use Tests\TestCase;
 class ExampleTest extends TestCase
 {
     /**
-     * A basic test example.
+     * @test
      */
-    public function test_the_application_returns_a_successful_response(): void
+    public function redirecionar_login_caso_usuario_nao_esteja_logado(): void
     {
-        $response = $this->get('/');
+        // teste simples para saber se usuario logado
+        $response =
+            $this
+            ->get('/tentandoEntrar')
+            ->assertRedirect('/login');
+    }
 
-        $response->assertStatus(200);
+
+    /**
+     *  @test
+     */
+    public function retorno_resposta_json(): void
+    {
+        // filtrando testes
+        // test --filter 'nome'        
+        $response =
+            $this
+            ->get('/return-get-teste')
+            ->assertJson([
+                'message' => 'success'
+            ]);
     }
 }
