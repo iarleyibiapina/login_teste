@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TesterController;
@@ -19,6 +20,9 @@ use App\Http\Controllers\OutroController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/cadastro', [CadastroController::class, 'Index'])->name("cadastro");
+Route::post('/cadastro-cep', [CadastroController::class, 'pegarCEP']);
 
 Route::get('login', function () {
     return view('indexLogin');
