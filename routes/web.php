@@ -21,8 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 
 Route::get('/cadastro', [CadastroController::class, 'Index'])->name("cadastro");
-Route::post('/cadastro-cep', [CadastroController::class, 'pegarCEP']);
+Route::post('/cadastro-cep', [CadastroController::class, 'pegarCEP'])->name("cadastroCep");
+// 
+
 
 Route::get('login', function () {
     return view('indexLogin');
