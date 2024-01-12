@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\CadastroController;
-use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TesterController;
-use App\Http\Controllers\OutroController;
+use App\Http\Controllers\{
+    CadastroController,
+    CategoryController,
+    TesterController,
+    OutroController,
+    MovieController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +27,10 @@ Route::get('/', function () {
 // 
 Route::get('/cadastro', [CadastroController::class, 'Index'])->name("cadastro");
 Route::post('/cadastro-cep', [CadastroController::class, 'pegarCEP'])->name("cadastroCep");
+// 
+
+// imdb
+Route::get('/imdb/{idFilme}', [MovieController::class, 'Index'])->name("movie");
 // 
 
 
