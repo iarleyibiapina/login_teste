@@ -30,7 +30,9 @@ Route::post('/cadastro-cep', [CadastroController::class, 'pegarCEP'])->name("cad
 // 
 
 // imdb
-Route::get('/imdb/{idFilme}', [MovieController::class, 'Index'])->name("movie");
+Route::get('/imdb/{idFilme}', [MovieController::class, 'searchFilmeApi']);
+Route::get('/imdb/{idFilme}/store-filme', [MovieController::class, 'storeFilme']);
+Route::get('/imdb/{idFilme}/get-filme', [MovieController::class, 'getFilme']);
 // 
 
 
