@@ -42,4 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // criando relacionamento
+
+    //  de n para n, primeiro a classe e depois a tabela a relacionar
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_users');
+    }
 }
