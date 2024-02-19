@@ -18,5 +18,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // criando perfil, permissao e papeis
+        $this->call([
+            UserSeeder::class,
+            PermissionSeeder::class,
+            RoleSeeder::class,
+            RoleUserSeeder::class,
+            PermissionRoleSeeder::class,
+        ]);
     }
 }
