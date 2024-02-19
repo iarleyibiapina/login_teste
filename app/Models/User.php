@@ -48,6 +48,6 @@ class User extends Authenticatable
     //  de n para n, primeiro a classe e depois a tabela a relacionar
     public function roles()
     {
-        return $this->belongsToMany(Role::class, 'role_users');
+        return $this->belongsToMany(Role::class, 'roles_users');
     }
 }
