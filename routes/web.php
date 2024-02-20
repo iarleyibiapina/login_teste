@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     CategoryController,
     TesterController,
     OutroController,
-    MovieController
+    MovieController,
+    AclController
 };
 
 /*
@@ -54,3 +55,7 @@ Route::controller(TesterController::class)->as('teste.')->group(function () {
 
 
 Route::get("/tentandoEntrar", [OutroController::class, 'index'])->middleware("auth");
+
+// Middeware routes 
+Route::middleware('auth')->get('/acl', [AclController::class, 'index']);
+// Route::get('/acl', [AclController::class, 'index']);
